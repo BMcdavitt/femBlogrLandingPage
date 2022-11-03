@@ -1,0 +1,50 @@
+footer {
+    .darkBackground {
+        background: $color-footer-background;
+        border-top-right-radius: 6.25rem;
+        padding: 4.375rem 9.375rem 0 9.375rem;
+        color: $color-footer-text;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 1.25rem;
+
+        display: flex;
+
+        @include large {
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: flex-start;
+        }
+    }
+
+    img {
+        width: 6.25rem;
+        margin-bottom:2.1875rem; 
+      }
+
+      h3 {
+        margin: 2.5rem 0;
+
+        @include large {
+          margin: 0 0 2.5rem 0;
+
+        }
+      }
+
+      ul {
+        list-style: none;
+        text-align: center;
+        line-height: 2rem;
+        margin-bottom: 3.125rem;
+        text-align: left;
+
+        li {
+          margin-bottom: 1rem;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+}

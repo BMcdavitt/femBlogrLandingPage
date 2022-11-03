@@ -1,0 +1,163 @@
+header {
+  background-image: url('/images/bg-pattern-intro-mobile.svg'),
+    linear-gradient($background-color-a, $background-color-b);
+  background-position: 40% 40%;
+  position: relative;
+  padding: 1.5625rem;
+
+  border-bottom-left-radius: 6.25rem;
+
+  @include large {
+    background-image: url('/images/bg-pattern-intro-desktop.svg'),
+    linear-gradient($background-color-a, $background-color-b);
+  }
+  .hamburgerArea {
+    height: 1.25rem;
+    width: 2.3125rem;
+    background: transparent;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+
+    @include large {
+      display: none;
+    }
+  }
+
+  .hamburger {
+    background: $color-text;
+    height: 0.125rem;
+    width: 2.1875rem;
+    position: absolute;
+    cursor: pointer;
+    right: 1.5625rem;
+
+    @include large {
+      display: none;
+    }
+  }
+
+  .hamMiddle {
+    top: 2.0625rem;
+  }
+
+  .hamBefore {
+    top: 1.5625rem;
+  }
+
+  .hamAfter {
+    top: 2.5625rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    text-align: center;
+    font-weight: 300;
+    color: $color-text;
+
+    @include large {
+      font-size: 3.75rem;
+    }
+  }
+
+  .topRow {
+    margin-bottom: 6.25rem;
+    @include large {
+      display: flex;
+      align-items: center;
+      margin: 0 10rem;
+    }
+  }
+
+  p {
+    font-family: 'Ubuntu', sans-serif;
+    color: $color-text;
+    text-align: center;
+    font-size: 1.125rem;
+    margin: 1.25rem 0;
+
+    @include large {
+      font-size: 1.25rem;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.125rem;
+    margin-bottom: 9.375rem;
+
+    .prominent {
+      color: $color-light;
+      background-color: $color-text;
+
+      &:hover {
+        color: $color-text;
+        background: $color-very-light;
+      }
+    }
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slantDown {
+  from {
+    transform: rotate(0);
+    top: 1.5625rem;
+  }
+  to {
+    transform: rotate(45deg);
+    top: 1.875rem;
+  }
+}
+
+@keyframes slantDownBack {
+  from {
+    transform: rotate(45deg);
+    top: 1.875rem;
+  }
+  to {
+    transform: rotate(0);
+    top: 1.5625rem;
+  }
+}
+
+@keyframes slantUp {
+  from {
+    transform: rotate(0);
+    top: 2.5625rem;
+  }
+  to {
+    transform: rotate(-45deg);
+    top: 1.875rem;
+  }
+}
+
+@keyframes slantUpBack {
+  from {
+    transform: rotate(-45deg);
+    top: 1.875rem;
+  }
+  to {
+    transform: rotate(0);
+    top: 2.5625rem;
+  }
+}

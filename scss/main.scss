@@ -1,0 +1,196 @@
+@import 'responsive';
+@import 'config';
+@import 'attribution';
+@import 'header';
+@import 'menu';
+@import 'footer';
+
+main {
+  text-align: center;
+  margin-bottom: 6.25rem;
+  overflow: hidden;
+
+  .bodyTop {
+    position: relative;
+    margin-bottom: 18.75rem;
+
+    @include large {
+      margin-bottom: 12.5rem;
+      margin-top: 9.375rem;
+    }
+  }
+
+  h2,
+  h3 {
+    margin: 2.1875rem;
+    font-size: 1.875rem;
+
+    @include large {
+      font-size: 2.5rem;
+    }
+  }
+
+  h3 {
+    @include large {
+      font-size: 1.875rem;
+      margin-left: 20%;
+      text-align: left;
+    }
+  }
+
+  img {
+    margin: 0.625rem auto;
+    max-width: 100%;
+  }
+
+  p {
+    font-size: 1rem;
+    letter-spacing: 0.0625rem;
+    line-height: 1.75rem;
+    margin: 0 2.1875rem;
+
+    @include large {
+      margin-left: 20%;
+      text-align: left;
+    }
+  }
+
+  .image1div {
+    position: relative;
+  }
+
+  .image2nddiv {
+    position: absolute;
+  }
+
+  .phones {
+    max-width: 100%;
+    position: relative;
+    margin: -50% auto;
+    z-index: 2;
+
+    @include large {
+      margin: -20% auto;
+    }
+  }
+
+  .darkBackground {
+    background: $color-very-dark;
+
+    border-top-right-radius: 6.25rem;
+    border-bottom-left-radius: 6.25rem;
+    padding: 15rem 0 9.375rem 0;
+    color: $color-text;
+    position: relative;
+    overflow: hidden;
+
+    @include large {
+      padding: 3.125rem 0 6.25rem 0;
+      margin-bottom: 12.5rem;
+    }
+    .darkBackrgoundImage {
+      position: absolute;
+      left: -10%;
+      top: -25%;
+      z-index: 0;
+    }
+
+    h2 {
+      position: relative;
+      z-index: 1;
+      color: $color-text;
+    }
+
+    p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .darkBackgroundSideby {
+      @include large {
+        display: flex;
+      }
+
+      .darkBackgroundSidebyLeft {
+        @include large {
+          width: 50%;
+        }
+      }
+      .darkBackgroundSidebyRight {
+        @include large {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  .sideBy {
+    display: flex;
+    position: relative;
+
+    .leftSide,
+    .rightSideBottom {
+      width: 100%;
+      @include large {
+        width: 50%;
+      }
+    }
+
+    .rightSide,
+    .leftSideBottom {
+      display: none;
+
+      img {
+        position: absolute;
+        top: -30%;
+        right: -16%;
+        width: 60%;
+      }
+
+      @include large {
+        display: block;
+      }
+    }
+
+    .rightSideBottom {
+      margin-right: 3.125rem;
+    }
+
+    .leftSideBottom {
+      width: 50%;
+
+      img {
+        right:auto;
+         left: -17%;
+         top: -30%;
+      }
+    }
+  }
+}
+
+.button {
+  border: 0.0625rem solid $color-text;
+  height: 3.125rem;
+  width: 8.625rem;
+  margin: 0.4375rem;
+  border-radius: 1.5625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: $color-text;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-text;
+    color: $color-light;
+  }
+}
+
+.mobileImage {
+  @include large {
+    font-size: 2.5rem;
+    display: none;
+  }
+}

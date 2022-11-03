@@ -1,0 +1,224 @@
+.menu {
+  position: absolute;
+  background: $color-text;
+  width: 80%;
+  left: 50%;
+  top: -200%;
+  margin-left: -40%;
+  margin-top: 2.1875rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0.3125rem 0.3125rem 1.125rem -0.25rem rgba(0, 0, 0, 0.51);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+
+  @include large {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    background: transparent;
+    box-shadow: none;
+    top: auto;
+    width: 100%;
+    left: auto;
+    margin-left: auto;
+    margin-top: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  .menuLeft {
+    @include large {
+      display: flex;
+      margin-left: 3.75rem;
+    }
+  }
+
+  ul {
+    list-style: none;
+    // display: inline;
+  }
+
+  .-header {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin: 1.25rem 0;
+    text-align: center;
+    cursor: pointer;
+
+    @include large {
+      color: $color-text;
+      font-size: 0.9375rem;
+      margin-right: 2.5rem;
+    }
+
+    .menuCategory:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown {
+      content: url('/images/icon-arrow-dark.svg');
+
+      @include large {
+        content: url('/images//icon-arrow-light.svg');
+      }
+    }
+  }
+
+  .itemHolder {
+    @include large {
+      position: absolute;
+      top: 2.5rem;
+    }
+
+    .items {
+      overflow: hidden;
+      height: 0;
+      background: $color-popover-menu;
+      border-radius: 0.4375rem;
+      text-align: center;
+      font-weight: 400;
+      margin-top: 1.25rem;
+      // text-decoration: none;
+
+      .-item {
+        padding: 0.625rem 0;
+        cursor: pointer;
+        color: $color-very-dark;
+
+        &:hover {
+          color: $color-very-dark;
+          font-weight: bold;
+        }
+      }
+
+      @include large {
+        // position: absolute;
+        // top: 2.5rem;
+        width: 6.25rem;
+        // height: 100%;
+        // display: grid;
+        // flex-direction: column;
+        // height: 31.25rem;
+      }
+    }
+  }
+
+  .divider {
+    border-top: 0.0625rem solid $color-footer-text;
+    width: 100%;
+    margin-top: 0.9375rem;
+
+    @include large {
+      display: none;
+    }
+  }
+
+  .menuRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include large {
+      flex-direction: row;
+    }
+  }
+
+  .loginButton {
+    font-weight: bold;
+    font-size: 1.125rem;
+    margin: 2.1875rem 0 0.9375rem 0;
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    @include large {
+      margin: auto 1.5625rem;
+      color: $color-text;
+    }
+  }
+
+  .menuButton {
+    background: linear-gradient(
+      to right,
+      $background-color-a,
+      $background-color-b
+    );
+
+    &:hover {
+      cursor: pointer;
+      background: $color-very-light;
+      color: $color-text;
+    }
+
+    @include large {
+      background: $color-text;
+      color: $color-light;
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    top: -200%;
+  }
+  to {
+    top: 10%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    top: 10%;
+  }
+  to {
+    top: -200%;
+  }
+}
+
+@keyframes expand {
+  0% {
+    height: 0rem;
+    max-height: 0;
+  }
+  90% {
+    height: 100%;
+    max-height: 50vh;
+  }
+  100% {
+    height: 100%;
+    max-height: 100vh;
+  }
+}
+
+@keyframes collapse {
+  from {
+    height: 100%;
+    max-height: 25vh;
+  }
+  to {
+    height: 0%;
+    max-height: 0;
+  }
+}
+
+@keyframes rotateArrow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes unrotateArrow {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

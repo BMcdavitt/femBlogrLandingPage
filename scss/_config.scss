@@ -1,0 +1,21 @@
+$background-color-a: hsl(13, 100%, 72%);
+$background-color-b: hsl(353, 100%, 62%); 
+
+$color-light:  hsl(356, 100%, 66%);
+$color-very-light:  hsl(355, 100%, 74%);
+$color-very-dark: hsl(208, 49%, 24%);
+
+$color-text: hsl(0, 0%, 100%);
+$color-footer-text: hsl(240, 2%, 79%);
+$color-body: hsl(207, 13%, 34%);
+$color-footer-background: hsl(240, 10%, 16%);
+
+$color-popover-menu: #efeff1;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Overpass', sans-serif;
+}

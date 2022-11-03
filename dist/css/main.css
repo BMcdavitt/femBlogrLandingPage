@@ -1,0 +1,706 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Overpass", sans-serif;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+header {
+  background-image: url("/images/bg-pattern-intro-mobile.svg"), linear-gradient(hsl(13deg, 100%, 72%), hsl(353deg, 100%, 62%));
+  background-position: 40% 40%;
+  position: relative;
+  padding: 1.5625rem;
+  border-bottom-left-radius: 6.25rem;
+}
+@media (min-width: 62.5rem) {
+  header {
+    background-image: url("/images/bg-pattern-intro-desktop.svg"), linear-gradient(hsl(13deg, 100%, 72%), hsl(353deg, 100%, 62%));
+  }
+}
+header .hamburgerArea {
+  height: 1.25rem;
+  width: 2.3125rem;
+  background: transparent;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+@media (min-width: 62.5rem) {
+  header .hamburgerArea {
+    display: none;
+  }
+}
+header .hamburger {
+  background: hsl(0deg, 0%, 100%);
+  height: 0.125rem;
+  width: 2.1875rem;
+  position: absolute;
+  cursor: pointer;
+  right: 1.5625rem;
+}
+@media (min-width: 62.5rem) {
+  header .hamburger {
+    display: none;
+  }
+}
+header .hamMiddle {
+  top: 2.0625rem;
+}
+header .hamBefore {
+  top: 1.5625rem;
+}
+header .hamAfter {
+  top: 2.5625rem;
+}
+header h1 {
+  font-size: 2.25rem;
+  text-align: center;
+  font-weight: 300;
+  color: hsl(0deg, 0%, 100%);
+}
+@media (min-width: 62.5rem) {
+  header h1 {
+    font-size: 3.75rem;
+  }
+}
+header .topRow {
+  margin-bottom: 6.25rem;
+}
+@media (min-width: 62.5rem) {
+  header .topRow {
+    display: flex;
+    align-items: center;
+    margin: 0 10rem;
+  }
+}
+header p {
+  font-family: "Ubuntu", sans-serif;
+  color: hsl(0deg, 0%, 100%);
+  text-align: center;
+  font-size: 1.125rem;
+  margin: 1.25rem 0;
+}
+@media (min-width: 62.5rem) {
+  header p {
+    font-size: 1.25rem;
+  }
+}
+header .buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.125rem;
+  margin-bottom: 9.375rem;
+}
+header .buttons .prominent {
+  color: hsl(356deg, 100%, 66%);
+  background-color: hsl(0deg, 0%, 100%);
+}
+header .buttons .prominent:hover {
+  color: hsl(0deg, 0%, 100%);
+  background: hsl(355deg, 100%, 74%);
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slantDown {
+  from {
+    transform: rotate(0);
+    top: 1.5625rem;
+  }
+  to {
+    transform: rotate(45deg);
+    top: 1.875rem;
+  }
+}
+@keyframes slantDown {
+  from {
+    transform: rotate(0);
+    top: 1.5625rem;
+  }
+  to {
+    transform: rotate(45deg);
+    top: 1.875rem;
+  }
+}
+@-webkit-keyframes slantDownBack {
+  from {
+    transform: rotate(45deg);
+    top: 1.875rem;
+  }
+  to {
+    transform: rotate(0);
+    top: 1.5625rem;
+  }
+}
+@keyframes slantDownBack {
+  from {
+    transform: rotate(45deg);
+    top: 1.875rem;
+  }
+  to {
+    transform: rotate(0);
+    top: 1.5625rem;
+  }
+}
+@-webkit-keyframes slantUp {
+  from {
+    transform: rotate(0);
+    top: 2.5625rem;
+  }
+  to {
+    transform: rotate(-45deg);
+    top: 1.875rem;
+  }
+}
+@keyframes slantUp {
+  from {
+    transform: rotate(0);
+    top: 2.5625rem;
+  }
+  to {
+    transform: rotate(-45deg);
+    top: 1.875rem;
+  }
+}
+@-webkit-keyframes slantUpBack {
+  from {
+    transform: rotate(-45deg);
+    top: 1.875rem;
+  }
+  to {
+    transform: rotate(0);
+    top: 2.5625rem;
+  }
+}
+@keyframes slantUpBack {
+  from {
+    transform: rotate(-45deg);
+    top: 1.875rem;
+  }
+  to {
+    transform: rotate(0);
+    top: 2.5625rem;
+  }
+}
+.menu {
+  position: absolute;
+  background: hsl(0deg, 0%, 100%);
+  width: 80%;
+  left: 50%;
+  top: -200%;
+  margin-left: -40%;
+  margin-top: 2.1875rem;
+  border-radius: 0.3125rem;
+  box-shadow: 0.3125rem 0.3125rem 1.125rem -0.25rem rgba(0, 0, 0, 0.51);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+@media (min-width: 62.5rem) {
+  .menu {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    background: transparent;
+    box-shadow: none;
+    top: auto;
+    width: 100%;
+    left: auto;
+    margin-left: auto;
+    margin-top: 0;
+    padding: 0;
+    align-items: center;
+  }
+}
+@media (min-width: 62.5rem) {
+  .menu .menuLeft {
+    display: flex;
+    margin-left: 3.75rem;
+  }
+}
+.menu ul {
+  list-style: none;
+}
+.menu .-header {
+  font-weight: bold;
+  font-size: 1.125rem;
+  margin: 1.25rem 0;
+  text-align: center;
+  cursor: pointer;
+}
+@media (min-width: 62.5rem) {
+  .menu .-header {
+    color: hsl(0deg, 0%, 100%);
+    font-size: 0.9375rem;
+    margin-right: 2.5rem;
+  }
+}
+.menu .-header .menuCategory:hover {
+  text-decoration: underline;
+}
+.menu .-header .dropdown {
+  content: url("/images/icon-arrow-dark.svg");
+}
+@media (min-width: 62.5rem) {
+  .menu .-header .dropdown {
+    content: url("/images//icon-arrow-light.svg");
+  }
+}
+@media (min-width: 62.5rem) {
+  .menu .itemHolder {
+    position: absolute;
+    top: 2.5rem;
+  }
+}
+.menu .itemHolder .items {
+  overflow: hidden;
+  height: 0;
+  background: #efeff1;
+  border-radius: 0.4375rem;
+  text-align: center;
+  font-weight: 400;
+  margin-top: 1.25rem;
+}
+.menu .itemHolder .items .-item {
+  padding: 0.625rem 0;
+  cursor: pointer;
+  color: hsl(208deg, 49%, 24%);
+}
+.menu .itemHolder .items .-item:hover {
+  color: hsl(208deg, 49%, 24%);
+  font-weight: bold;
+}
+@media (min-width: 62.5rem) {
+  .menu .itemHolder .items {
+    width: 6.25rem;
+  }
+}
+.menu .divider {
+  border-top: 0.0625rem solid hsl(240deg, 2%, 79%);
+  width: 100%;
+  margin-top: 0.9375rem;
+}
+@media (min-width: 62.5rem) {
+  .menu .divider {
+    display: none;
+  }
+}
+.menu .menuRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 62.5rem) {
+  .menu .menuRight {
+    flex-direction: row;
+  }
+}
+.menu .loginButton {
+  font-weight: bold;
+  font-size: 1.125rem;
+  margin: 2.1875rem 0 0.9375rem 0;
+}
+.menu .loginButton:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media (min-width: 62.5rem) {
+  .menu .loginButton {
+    margin: auto 1.5625rem;
+    color: hsl(0deg, 0%, 100%);
+  }
+}
+.menu .menuButton {
+  background: linear-gradient(to right, hsl(13deg, 100%, 72%), hsl(353deg, 100%, 62%));
+}
+.menu .menuButton:hover {
+  cursor: pointer;
+  background: hsl(355deg, 100%, 74%);
+  color: hsl(0deg, 0%, 100%);
+}
+@media (min-width: 62.5rem) {
+  .menu .menuButton {
+    background: hsl(0deg, 0%, 100%);
+    color: hsl(356deg, 100%, 66%);
+  }
+}
+
+@-webkit-keyframes slideDown {
+  from {
+    top: -200%;
+  }
+  to {
+    top: 10%;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    top: -200%;
+  }
+  to {
+    top: 10%;
+  }
+}
+@-webkit-keyframes slideUp {
+  from {
+    top: 10%;
+  }
+  to {
+    top: -200%;
+  }
+}
+@keyframes slideUp {
+  from {
+    top: 10%;
+  }
+  to {
+    top: -200%;
+  }
+}
+@-webkit-keyframes expand {
+  0% {
+    height: 0rem;
+    max-height: 0;
+  }
+  90% {
+    height: 100%;
+    max-height: 50vh;
+  }
+  100% {
+    height: 100%;
+    max-height: 100vh;
+  }
+}
+@keyframes expand {
+  0% {
+    height: 0rem;
+    max-height: 0;
+  }
+  90% {
+    height: 100%;
+    max-height: 50vh;
+  }
+  100% {
+    height: 100%;
+    max-height: 100vh;
+  }
+}
+@-webkit-keyframes collapse {
+  from {
+    height: 100%;
+    max-height: 25vh;
+  }
+  to {
+    height: 0%;
+    max-height: 0;
+  }
+}
+@keyframes collapse {
+  from {
+    height: 100%;
+    max-height: 25vh;
+  }
+  to {
+    height: 0%;
+    max-height: 0;
+  }
+}
+@-webkit-keyframes rotateArrow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+@keyframes rotateArrow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+@-webkit-keyframes unrotateArrow {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes unrotateArrow {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+footer .darkBackground {
+  background: hsl(240deg, 10%, 16%);
+  border-top-right-radius: 6.25rem;
+  padding: 4.375rem 9.375rem 0 9.375rem;
+  color: hsl(240deg, 2%, 79%);
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.25rem;
+  display: flex;
+}
+@media (min-width: 62.5rem) {
+  footer .darkBackground {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+}
+footer img {
+  width: 6.25rem;
+  margin-bottom: 2.1875rem;
+}
+footer h3 {
+  margin: 2.5rem 0;
+}
+@media (min-width: 62.5rem) {
+  footer h3 {
+    margin: 0 0 2.5rem 0;
+  }
+}
+footer ul {
+  list-style: none;
+  text-align: center;
+  line-height: 2rem;
+  margin-bottom: 3.125rem;
+  text-align: left;
+}
+footer ul li {
+  margin-bottom: 1rem;
+}
+footer ul li:hover {
+  text-decoration: underline;
+}
+
+main {
+  text-align: center;
+  margin-bottom: 6.25rem;
+  overflow: hidden;
+}
+main .bodyTop {
+  position: relative;
+  margin-bottom: 18.75rem;
+}
+@media (min-width: 62.5rem) {
+  main .bodyTop {
+    margin-bottom: 12.5rem;
+    margin-top: 9.375rem;
+  }
+}
+main h2,
+main h3 {
+  margin: 2.1875rem;
+  font-size: 1.875rem;
+}
+@media (min-width: 62.5rem) {
+  main h2,
+main h3 {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 62.5rem) {
+  main h3 {
+    font-size: 1.875rem;
+    margin-left: 20%;
+    text-align: left;
+  }
+}
+main img {
+  margin: 0.625rem auto;
+  max-width: 100%;
+}
+main p {
+  font-size: 1rem;
+  letter-spacing: 0.0625rem;
+  line-height: 1.75rem;
+  margin: 0 2.1875rem;
+}
+@media (min-width: 62.5rem) {
+  main p {
+    margin-left: 20%;
+    text-align: left;
+  }
+}
+main .image1div {
+  position: relative;
+}
+main .image2nddiv {
+  position: absolute;
+}
+main .phones {
+  max-width: 100%;
+  position: relative;
+  margin: -50% auto;
+  z-index: 2;
+}
+@media (min-width: 62.5rem) {
+  main .phones {
+    margin: -20% auto;
+  }
+}
+main .darkBackground {
+  background: hsl(208deg, 49%, 24%);
+  border-top-right-radius: 6.25rem;
+  border-bottom-left-radius: 6.25rem;
+  padding: 15rem 0 9.375rem 0;
+  color: hsl(0deg, 0%, 100%);
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 62.5rem) {
+  main .darkBackground {
+    padding: 3.125rem 0 6.25rem 0;
+    margin-bottom: 12.5rem;
+  }
+}
+main .darkBackground .darkBackrgoundImage {
+  position: absolute;
+  left: -10%;
+  top: -25%;
+  z-index: 0;
+}
+main .darkBackground h2 {
+  position: relative;
+  z-index: 1;
+  color: hsl(0deg, 0%, 100%);
+}
+main .darkBackground p {
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 62.5rem) {
+  main .darkBackground .darkBackgroundSideby {
+    display: flex;
+  }
+}
+@media (min-width: 62.5rem) {
+  main .darkBackground .darkBackgroundSideby .darkBackgroundSidebyLeft {
+    width: 50%;
+  }
+}
+@media (min-width: 62.5rem) {
+  main .darkBackground .darkBackgroundSideby .darkBackgroundSidebyRight {
+    width: 50%;
+  }
+}
+main .sideBy {
+  display: flex;
+  position: relative;
+}
+main .sideBy .leftSide,
+main .sideBy .rightSideBottom {
+  width: 100%;
+}
+@media (min-width: 62.5rem) {
+  main .sideBy .leftSide,
+main .sideBy .rightSideBottom {
+    width: 50%;
+  }
+}
+main .sideBy .rightSide,
+main .sideBy .leftSideBottom {
+  display: none;
+}
+main .sideBy .rightSide img,
+main .sideBy .leftSideBottom img {
+  position: absolute;
+  top: -30%;
+  right: -16%;
+  width: 60%;
+}
+@media (min-width: 62.5rem) {
+  main .sideBy .rightSide,
+main .sideBy .leftSideBottom {
+    display: block;
+  }
+}
+main .sideBy .rightSideBottom {
+  margin-right: 3.125rem;
+}
+main .sideBy .leftSideBottom {
+  width: 50%;
+}
+main .sideBy .leftSideBottom img {
+  right: auto;
+  left: -17%;
+  top: -30%;
+}
+
+.button {
+  border: 0.0625rem solid hsl(0deg, 0%, 100%);
+  height: 3.125rem;
+  width: 8.625rem;
+  margin: 0.4375rem;
+  border-radius: 1.5625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: hsl(0deg, 0%, 100%);
+}
+.button:hover {
+  cursor: pointer;
+  background-color: hsl(0deg, 0%, 100%);
+  color: hsl(356deg, 100%, 66%);
+}
+
+@media (min-width: 62.5rem) {
+  .mobileImage {
+    font-size: 2.5rem;
+    display: none;
+  }
+}
