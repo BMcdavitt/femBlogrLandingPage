@@ -18,6 +18,7 @@ let menuVisible = false
 let sectionExpanded = 'none'
 let sectionArrowExpanded = 'none'
 
+document.addEventListener('click', closeMenus)
 hamburger.addEventListener('click', toggleMenu)
 hamBefore.addEventListener('click', toggleMenu)
 hamAfter.addEventListener('click', toggleMenu)
@@ -33,6 +34,20 @@ connect.addEventListener('click', () => {
   expandMenu(connectItems, connectArrow)
 })
 
+function closeMenus() {
+
+  console.log('he')
+
+  if (
+    !menu.contains(event.target) &&
+    !hamburgerArea.contains(event.target) &&
+    !hamburger.contains(event.target)
+  ) {
+    toggleMenu()
+    closeOptions()
+  }
+}
+
 function toggleMenu() {
   if (menuVisible === false) {
     menuVisible = true
@@ -46,11 +61,15 @@ function toggleMenu() {
     hamburger.style.animation = 'fadein 0.5s forwards'
     hamBefore.style.animation = 'slantDownBack 0.5s forwards'
     hamAfter.style.animation = 'slantUpBack 0.5s forwards'
-    if (sectionExpanded !== 'none') {
-      sectionExpanded.style.animation = 'collapse 1s forwards'
-      sectionArrowExpanded.style.animation = 'unrotateArrow 1s forwards'
-      sectionExpanded = 'none'
-    }
+    closeOptions()
+  }
+}
+
+function closeOptions() {
+  if (sectionExpanded !== 'none') {
+    sectionExpanded.style.animation = 'collapse 1s forwards'
+    sectionArrowExpanded.style.animation = 'unrotateArrow 1s forwards'
+    sectionExpanded = 'none'
   }
 }
 
