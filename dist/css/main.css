@@ -529,6 +529,10 @@ footer ul li:hover {
   text-decoration: underline;
 }
 
+body {
+  background: #fafafa;
+}
+
 main {
   text-align: center;
   margin-bottom: 6.25rem;
