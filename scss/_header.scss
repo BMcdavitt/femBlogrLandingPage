@@ -57,6 +57,7 @@ header {
     color: $color-text;
 
     @include large {
+      margin-top: 8.125rem;
       font-size: 3.75rem;
     }
   }
