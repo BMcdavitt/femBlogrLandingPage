@@ -58,10 +58,10 @@
     }
 
     .dropdown {
-      content: url('/images/icon-arrow-dark.svg');
+      content: url('./images/icon-arrow-dark.svg');
 
       @include large {
-        content: url('/images//icon-arrow-light.svg');
+        content: url('./images//icon-arrow-light.svg');
       }
     }
   }
